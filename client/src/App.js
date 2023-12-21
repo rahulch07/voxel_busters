@@ -81,7 +81,7 @@ const App = () => {
   // Calculate filteredStartups based on the filter value
   useEffect(() => {
     setFilteredStartups(
-      console.log(startups);
+      //console.log(startups);
       startups.filter((startup) => (filter ? startup.IndustryVertical === filter : true))
     );
     //console.log(filteredStartups);
