@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     // Fetch startups from the backend
-    axios.get('http://localhost:5000/api/startups').then((response) => setStartups(response.data));
+    axios.get('https://voxel-busters.vercel.app/').then((response) => setStartups(response.data));
   }, []);
 
   
@@ -90,7 +90,7 @@ const App = () => {
   const handleSave=(formData)=>{
     console.log(formData);
     // Send formData to the backend to save the startup
-    axios.post('http://localhost:5000/api/startups', formData)
+    axios.post('https://voxel-busters.vercel.app/', formData)
       .then((response) => {
         // Handle success or error
         console.log('Startup submitted successfully:', response.data);
@@ -124,29 +124,3 @@ const App = () => {
       }
 
 export default App;
-
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import StartupList from './components/StartupList';
-// import FilterDropdown from './components/FilterDropdown';
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="App">
-//         <header className="App-header">
-//           <h1>Startup Directory</h1>
-//         </header>
-//         <main className="container mx-auto p-4">
-//           <Routes>
-//             <Route path="/" exact element={<StartupList/>} />
-//             <Route path="/filter" element={<FilterDropdown/>} />
-//             {/* Add more routes as needed */}
-//           </Routes>
-//         </main>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
