@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     // Fetch startups from the backend
-    axios.get('https://voxel-busters.vercel.app/').then((response) => setStartups(response.data));
+    axios.get('https://voxel-busters.vercel.app/api/startups').then((response) => setStartups(response.data));
   }, []);
 
   
@@ -91,7 +91,7 @@ const App = () => {
   const handleSave=(formData)=>{
     console.log(formData);
     // Send formData to the backend to save the startup
-    axios.post('https://voxel-busters.vercel.app/', formData)
+    axios.post('https://voxel-busters.vercel.app/api/startups', formData)
       .then((response) => {
         // Handle success or error
         console.log('Startup submitted successfully:', response.data);
